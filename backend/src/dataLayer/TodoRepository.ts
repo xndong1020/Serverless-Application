@@ -96,6 +96,19 @@ export default class TodoRepository {
 
     await this.docClient.delete(params).promise()
   }
+
+  checkTodoItemExists = async (todoId: string): Promise<boolean> => {
+    const result = await this.docClient
+      .query({
+        TableName: this.todosTable,
+        KeyConditionExpression: 'todoId = :todoId',
+        ExpressionAttributeValues: {
+          ':todoId': todoId
+        }
+      })
+      .promise()
+    return !!result.Count
+  }
 }
 
 const generateUpdateQuery = (fields: any) => {

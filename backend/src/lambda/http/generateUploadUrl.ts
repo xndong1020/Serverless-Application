@@ -15,14 +15,21 @@ export const handler = middy(
     const imageId = uuid.v4()
 
     // TODO: Return a presigned URL to upload a file for a TODO item with the provided id
-    const uploadUrl = await generateUploadUrl(imageId)
-    await updateTodoAttachmentUrl(todoId, imageId, token)
+    try {
+      const uploadUrl = await generateUploadUrl(todoId, imageId)
+      await updateTodoAttachmentUrl(todoId, imageId, token)
 
-    return {
-      statusCode: 201,
-      body: JSON.stringify({
-        uploadUrl
-      })
+      return {
+        statusCode: 201,
+        body: JSON.stringify({
+          uploadUrl
+        })
+      }
+    } catch (err) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ message: err.message })
+      }
     }
   }
 )

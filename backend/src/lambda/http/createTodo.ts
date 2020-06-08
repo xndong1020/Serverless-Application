@@ -13,6 +13,14 @@ export const handler = middy(
   async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
     const newTodo: CreateTodoRequest = JSON.parse(event.body)
 
+    const { name, dueDate } = newTodo
+
+    if (!name || !dueDate || !name.trim() || !dueDate.trim())
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ message: 'Invalid request format' })
+      }
+
     const token = parseToken(event.headers.Authorization)
 
     // TODO: Implement creating a new TODO item
