@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "3b63f1b5-d3db-41eb-bec8-031a3d87a0c5",
+		"name": "udacity-todo-serverless",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all todos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "https://{{host}}/dev/todos",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"dev",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create todo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test name\",\n\t\"dueDate\": \"2020-06-08\"\n}"
+				},
+				"url": {
+					"raw": "https://{{host}}/dev/todos",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"dev",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update todo",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test name ccc\",\n\t\"dueDate\": \"2020-06-08\",\n\t\"done\": false\n}"
+				},
+				"url": {
+					"raw": "https://{{host}}/dev/todos/72992e81-c3b5-46c8-9a99-9d7752a04d37",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"dev",
+						"todos",
+						"72992e81-c3b5-46c8-9a99-9d7752a04d37"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete todo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/dev/todos/72992e81-c3b5-46c8-9a99-9d7752a04d37",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"dev",
+						"todos",
+						"72992e81-c3b5-46c8-9a99-9d7752a04d37"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get attachment URL",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{host}}/dev/todos/1/attachment",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"dev",
+						"todos",
+						"1",
+						"attachment"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5FVXlPRFpETVVReU1qVXlPVEJEUVVWRFFVWkNSalF4TkRJM05rWTBPVFl4UXpneE9EVXpPUSJ9.eyJpc3MiOiJodHRwczovL2JieGl0LmF1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZDIxZTBlYTgxNzcwMDBlMzI2ZmIzZjIiLCJhdWQiOiJ0cFIxbzZ0Z1EzNmZva2N0VFVqQWlPcWtaanVhblNjdSIsImlhdCI6MTU5MTYwMDI0NywiZXhwIjoxNTkxNjcyMjQ3LCJhdF9oYXNoIjoibFIzZHN2QjBYR0FBYWZ0YXd1OS0yUSIsIm5vbmNlIjoiWTVoTW9YUjRnOTRHOU9NaHM1UmRWeEhpb0d3cGNjRkkifQ.kvDx-HZ-CUF_j9jZB7EkJyW8p8pxGmIWq7-2qRxfFVlTJEJkf6NtU7sXcxa3WQ9dEvdJPRdLwrSequFcz9uKZNkNhn0rZz-PnrDQ1oMkbmitgYefp_ho36xIjCLTIJK5OOf2KVOOqRP43cjKqNWG0B4LIfZN2TagRIUTZxqp4NUeQXp8NC45y5jlkO7syI-HPu9lLMX5uL5PnlOCdt_2HNHxbDLcWTXs-t42nLlP4vj-K58V7LsemWF4MnzGsm9uq_54r0NKJKuuUxxaWZa4ahhNWIrB-u3acWruotq9YIW8chWkS9wUOQkMs2ucuqI7_39hc5YniEhpnmQPhgV1dA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "5fb309a1-32d9-463f-8535-34a134c1177b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e372a3c6-99ec-401e-b29e-44aeaf442353",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "0779e674-b1cf-4247-84e7-fe6093e396ba",
+			"key": "host",
+			"value": "7qsutcp6ze.execute-api.us-west-2.amazonaws.com",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
