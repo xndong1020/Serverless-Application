@@ -147,7 +147,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5FVXlPRFpETVVReU1qVXlPVEJEUVVWRFFVWkNSalF4TkRJM05rWTBPVFl4UXpneE9EVXpPUSJ9.eyJpc3MiOiJodHRwczovL2JieGl0LmF1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZDIxZTBlYTgxNzcwMDBlMzI2ZmIzZjIiLCJhdWQiOiJ0cFIxbzZ0Z1EzNmZva2N0VFVqQWlPcWtaanVhblNjdSIsImlhdCI6MTU5MTYwMDI0NywiZXhwIjoxNTkxNjcyMjQ3LCJhdF9oYXNoIjoibFIzZHN2QjBYR0FBYWZ0YXd1OS0yUSIsIm5vbmNlIjoiWTVoTW9YUjRnOTRHOU9NaHM1UmRWeEhpb0d3cGNjRkkifQ.kvDx-HZ-CUF_j9jZB7EkJyW8p8pxGmIWq7-2qRxfFVlTJEJkf6NtU7sXcxa3WQ9dEvdJPRdLwrSequFcz9uKZNkNhn0rZz-PnrDQ1oMkbmitgYefp_ho36xIjCLTIJK5OOf2KVOOqRP43cjKqNWG0B4LIfZN2TagRIUTZxqp4NUeQXp8NC45y5jlkO7syI-HPu9lLMX5uL5PnlOCdt_2HNHxbDLcWTXs-t42nLlP4vj-K58V7LsemWF4MnzGsm9uq_54r0NKJKuuUxxaWZa4ahhNWIrB-u3acWruotq9YIW8chWkS9wUOQkMs2ucuqI7_39hc5YniEhpnmQPhgV1dA",
+				"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5FVXlPRFpETVVReU1qVXlPVEJEUVVWRFFVWkNSalF4TkRJM05rWTBPVFl4UXpneE9EVXpPUSJ9.eyJpc3MiOiJodHRwczovL2JieGl0LmF1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZDIxZTBlYTgxNzcwMDBlMzI2ZmIzZjIiLCJhdWQiOiJ0cFIxbzZ0Z1EzNmZva2N0VFVqQWlPcWtaanVhblNjdSIsImlhdCI6MTU5MTY0Njg4NywiZXhwIjoxNTkxNzE4ODg3LCJhdF9oYXNoIjoiTHRKUzc2Rm13WFZWRERIZDdSLUM3ZyIsIm5vbmNlIjoiMmtEZml0fk1yUG9IMTNoOHczWnNrMWExWnNDfmNpcEMifQ.Mnzw-8bqYiw9UxTQJdUDn0wloLSi8kwc1vgq9lFdUKqLRTYn5MO6hvdJpJApjx3wvrNLe6YT2KrWa-VT-lLAsl9uMMTo0itB3yu5cBxwy8ML7DqeIIGUvaR2AZw0As5i2E1am2v11xIdrtPFNLym3YdE_TtaWTdqHZUqVfUgoNiBeH7VErZxBS9KUMC3GLr3doWW3imTE930AMQRrSpdYTzY8-Jy8WeG4uiNE98lGXNLsylsnEaEhZejj1jGUTg7YZ8pl5njb3j1Lq_we3e-Ia55eMhRs1upX8oe5Z5NHIRoAYup66C1ZlAz-OksgtglIUmKMv4w6WgzhkDyDP5uSg",
 				"type": "string"
 			}
 		]
@@ -176,9 +176,9 @@
 	],
 	"variable": [
 		{
-			"id": "0779e674-b1cf-4247-84e7-fe6093e396ba",
+			"id": "c8c94447-3222-4391-858a-46cd73993e7c",
 			"key": "host",
-			"value": "7qsutcp6ze.execute-api.us-west-2.amazonaws.com",
+			"value": "nhlsg0wqy5.execute-api.us-west-2.amazonaws.com",
 			"type": "string"
 		}
 	],

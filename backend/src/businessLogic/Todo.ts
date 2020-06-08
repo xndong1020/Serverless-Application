@@ -48,14 +48,14 @@ export const updateTodo = async (
   jwtToken: string
 ): Promise<void> => {
   const userId = parseUserId(jwtToken)
+  if (!userId) throw new Error('User not exists')
   await todoRepo.updateTodoItem(
     {
       name: updateTodoRequest.name,
       dueDate: updateTodoRequest.dueDate,
       done: updateTodoRequest.done
     },
-    todoId,
-    userId
+    todoId
   )
 }
 
@@ -65,8 +65,9 @@ export const updateTodoAttachmentUrl = async (
   jwtToken: string
 ): Promise<void> => {
   const userId = parseUserId(jwtToken)
+  if (!userId) throw new Error('User not exists')
   const attachmentUrl = `https://${bucketName}.s3.amazonaws.com/${imageId}`
-  await todoRepo.updateTodoAttachmentUrl(attachmentUrl, todoId, userId)
+  await todoRepo.updateTodoAttachmentUrl(attachmentUrl, todoId)
 }
 
 export const deleteTodo = async (
@@ -74,5 +75,6 @@ export const deleteTodo = async (
   jwtToken: string
 ): Promise<void> => {
   const userId = parseUserId(jwtToken)
-  await todoRepo.deleteTodoItem(todoId, userId)
+  if (!userId) throw new Error('User not exists')
+  await todoRepo.deleteTodoItem(todoId)
 }
