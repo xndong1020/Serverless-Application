@@ -16,6 +16,20 @@ export const handler = middy(
     const token = parseToken(event.headers.Authorization)
     const updatedTodo: UpdateTodoRequest = JSON.parse(event.body)
 
+    const { name, dueDate, done } = updatedTodo
+
+    if (
+      !name ||
+      !name.trim() ||
+      !dueDate ||
+      !dueDate.trim() ||
+      typeof done !== 'boolean'
+    )
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ message: 'Invalid request format' })
+      }
+
     // TODO: Update a TODO item with the provided id using values in the "updatedTodo" object
     await updateTodo(updatedTodo, todoId, token)
 
