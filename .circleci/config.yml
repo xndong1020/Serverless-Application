@@ -12,7 +12,7 @@ jobs:
 
       - restore_cache:
           keys:
-            - dependencies-cache-{{ checksum "package-lock.json" }}-{{ checksum "<< parameters.service_path >>/package-lock.json" }}
+            - dependencies-cache-{{ checksum "<< parameters.service_path >>/package-lock.json" }}
             - dependencies-cache
 
       - run:
@@ -43,7 +43,7 @@ jobs:
           paths:
             - node_modules
             - << parameters.service_path >>/node_modules
-          key: dependencies-cache-{{ checksum "package-lock.json" }}-{{ checksum "<< parameters.service_path >>/package-lock.json" }}
+          key: dependencies-cache-{{ checksum "<< parameters.service_path >>/package-lock.json" }}
 
 workflows:
   build-deploy:
