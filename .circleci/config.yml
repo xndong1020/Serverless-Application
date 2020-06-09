@@ -26,8 +26,15 @@ jobs:
             npm install
 
       - run:
+          name: Unit test application
+          no_output_timeout: 20m
+          command: |
+            cd << parameters.service_path >>
+            npm test
+
+      - run:
           name: Deploy application
-          no_output_timeout: 45m
+          no_output_timeout: 20m
           command: |
             cd << parameters.service_path >>
             serverless deploy -v
