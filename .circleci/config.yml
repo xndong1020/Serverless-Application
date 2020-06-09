@@ -1,8 +1,5 @@
 version: 2.1
 
-orbs:
-  s3: ngs/s3-deploy@0.0.1
-
 jobs:
   deploy-web:
     docker:
