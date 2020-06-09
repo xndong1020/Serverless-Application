@@ -26,12 +26,13 @@ jobs:
           command: |
             cd << parameters.service_path >>
             npm run build
-      
+
       - run:
           name: Deploy application to S3
           command: |
             cd << parameters.service_path >>/dist
             ls -la
+            awscli --version
 
       - save_cache:
           paths:
