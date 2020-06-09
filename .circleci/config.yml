@@ -22,12 +22,12 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            npm install
             cd << parameters.service_path >>
             npm install
 
       - run:
           name: Deploy application
+          no_output_timeout: 30m
           command: |
             cd << parameters.service_path >>
             serverless deploy -v
