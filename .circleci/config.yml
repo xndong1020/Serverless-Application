@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  aws-s3: circleci/aws-s3@x.y
+
 jobs:
   deploy-web:
     docker:
@@ -30,7 +33,7 @@ jobs:
       - run:
           name: Deploy application to S3
           command: |
-            cd << parameters.service_path >>/dist
+            cd << parameters.service_path >>/build
             ls -la
             awscli --version
 
