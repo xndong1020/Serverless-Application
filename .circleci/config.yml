@@ -1,6 +1,46 @@
 version: 2.1
 
+orbs:
+  s3: ngs/s3-deploy@0.0.1
+
 jobs:
+  deploy-web:
+    docker:
+      - image: circleci/node:12.10
+    parameters:
+      service_path:
+        type: string
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - dependencies-cache-{{ checksum "<< parameters.service_path >>/package-lock.json" }}
+            - dependencies-cache
+
+      - run:
+          name: Install dependencies
+          command: |
+            cd << parameters.service_path >>
+            npm install
+
+      - run:
+          name: Build production artifacts
+          command: |
+            cd << parameters.service_path >>
+            npm run build
+      
+      - run:
+          name: Deploy application to S3
+          command: |
+            cd << parameters.service_path >>/dist
+            ls -la
+
+      - save_cache:
+          paths:
+            - << parameters.service_path >>/node_modules
+          key: dependencies-cache-{{ checksum "<< parameters.service_path >>/package-lock.json" }}
+
   deploy-service:
     docker:
       - image: circleci/node:12.10
@@ -41,13 +81,16 @@ jobs:
 
       - save_cache:
           paths:
-            - node_modules
             - << parameters.service_path >>/node_modules
           key: dependencies-cache-{{ checksum "<< parameters.service_path >>/package-lock.json" }}
 
 workflows:
   build-deploy:
     jobs:
+      - deploy-web:
+          name: Deploy Todos React App
+          service_path: client
+          context: Development
       - deploy-service:
           name: Deploy Todos Serverless App
           service_path: backend
