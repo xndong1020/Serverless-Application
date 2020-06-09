@@ -33,10 +33,9 @@ jobs:
 
       - aws-s3/sync:
           name: Deploy application to S3
-          arguments: |
-            from: << parameters.service_path >>/build
-            overwrite: true
-            to: 's3://my-cloud-dev-s3'
+          from: << parameters.service_path >>/build
+          overwrite: true
+          to: 's3://my-cloud-dev-s3'
 
       - save_cache:
           paths:
