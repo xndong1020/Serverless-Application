@@ -7,8 +7,8 @@ plugins:
   - serverless-reqvalidator-plugin
   - serverless-aws-documentation
 
-package:
-  individually: true
+# package:
+#   individually: true
 
 provider:
   name: aws
