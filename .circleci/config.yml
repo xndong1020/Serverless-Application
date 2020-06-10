@@ -25,6 +25,18 @@ jobs:
             npm install
 
       - run:
+          name: Linting
+          command: |
+            cd << parameters.service_path >>
+            npm run lint
+
+      - run:
+          name: Unit testing
+          command: |
+            cd << parameters.service_path >>
+            npm test
+
+      - run:
           name: Build production artifacts
           command: |
             cd << parameters.service_path >>
