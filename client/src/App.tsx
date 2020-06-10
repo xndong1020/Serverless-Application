@@ -66,7 +66,6 @@ export default class App extends Component<AppProps, AppState> {
   }
 
   logInLogOutButton() {
-    console.log('Jeremy', this.props.auth)
     if (this.props.auth.isAuthenticated()) {
       return (
         <Menu.Item name="logout" onClick={this.handleLogout}>
